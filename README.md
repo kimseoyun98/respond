@@ -6,7 +6,7 @@
 
 <br/>
 
-## 🔥배포 링크
+# 🔥배포 링크
 
 [Respond <응답하라>](https://respond-woad.vercel.app/)
 
@@ -15,8 +15,9 @@
 | PW | testtest
 
 <br/>
+<br/>
 
-## 📦폴더 구조
+# 📦폴더 구조
 
 <details>
 <summary>📦src</summary>
@@ -149,8 +150,9 @@
 </details>
 
 <br/>
+<br/>
 
-## 개발 일정
+# 개발 일정
 
 | 기간                | 활동                                                   |     
 | ------------------- | ------------------------------------------------------ | 
@@ -162,10 +164,13 @@
 | 24.10.10 ~ 24.10.17 | 총 개발 기간                                           |     
 
 <br/>
+<br/>
 
-## 💻 개발 환경
+# 💻 개발 환경
 
-### Frontend
+<br/>
+
+## Frontend
 
 - ![Next.js](https://camo.githubusercontent.com/d4ff95c6c85e810b4acfe5dbf01bf2b44680cf75945b21a7e5438c87b473f2c6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6578742d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6578742e6a73266c6f676f436f6c6f723d7768697465) **Next.js**
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) **JavaScript**
@@ -182,29 +187,38 @@
 - **Shadcn**
 - **Moment Timezone**
 
-### Backend & API
+<br/>
+
+## Backend & API
 
 - **Supabase**
 - **Spotify API**
 
-### Development Tools
+<br/>
+
+## Development Tools
 
 - **Yarn Berry**
 
 <br/>
 
-## 🔧 주요기능
+<br/>
 
-### 회원가입 페이지 / 로그인 페이지
+# 🔧 주요기능
+
+<details>
+<summary><h2>1️⃣ 회원가입 페이지 / 로그인 페이지</h2></summary>
 
 ![로그인/회원가입](https://github.com/user-attachments/assets/fea3b2d7-0c37-4339-8574-695219716834)
 
 - 아이디, 비밀번호, 닉네임을 입력하여 회원가입 할 수 있습니다.
 - 아이디, 비밀번호를 입력하여 로그인 할 수 있습니다.
-
+</details>
+ 
 <br/>
 
-### 나의 홈피 메인페이지
+<details>
+<summary><h2>2️⃣ 나의 홈피 메인페이지</h2></summary>
 
 ![메인페이지](https://github.com/user-attachments/assets/3bf7e7d9-b071-4d28-9773-6b831fbe95ba)
 
@@ -241,94 +255,107 @@
 - 홈피 메인페이지에 미리보기 탭의 공개하고 싶은 목록을 수정할 수 있습니다.
 - 공개범위를 설정할 수 있습니다. (이웃/서로이웃/모두/비공개)
 - 공개하고 싶은 네비 탭 목록만 보여줄 수 있습니다.
+</details>
 
 <br/>
 
-### 팔로잉/팔로워 사용자 검색 기능
+<details>
+<summary><h2>3️⃣ 팔로잉/팔로워 사용자 검색 기능</h2></summary>
+
 
 ![검색기능:팔로워기능](https://github.com/user-attachments/assets/338c7c28-1bde-4dd6-b61f-055b72e0ce8c)
 
 - 사용자를 검색하고 사용자의 홈피에 진입할 수 있습니다.
 - 팔로잉을 걸고 사용자가 공개한 게시물과 플레이리스트를 접근할 수 있습니다.
+</details>
 
 <br/>
+<br/>
 
-## 🏹 트러블 슈팅
+# 🏹 트러블 슈팅
 
-### 1. 마이페이지 데이터 필터링
+<details>
+<summary> <h2>1️⃣ 마이페이지 데이터 필터링</h2> </summary>
 
-• 문제\_
+## 문제\_
 api 노래목록별로 추가버튼 생성 후 클릭시 supabase에 데이터가 올라가야하는데 에러
 
-• 원인\_
+## 원인\_
 테이블의 각 행별로 설정상 null은 허용하지않는다 해두었다.
 playlist에 값을 insert 해주면서 user_id 의 값을 넘겨주지않아, user_id 값이 null로 넘어가면서 생긴 문제
 
-• 해결\_
+## 해결\_
 browserClient.auth.getUser() : 로그인한 유저의 정보를 가져온다. -> 로그인한 유저가 없으면 유효성처리
 playlist에 값을 insert하면서 user_id도 같이 넘겨준다.
 => 이 과정을 기존 패치로 구현한부분에서 텐스텍쿼리로 전체 변경한다
 
+</details>
 <br />
 
-### 2. docs 꼼꼼하게 읽지 않은 문제
+<details>
+<summary><h2>2️⃣ docs 꼼꼼하게 읽지 않은 문제</h2></summary>
 
-<img width="1503" alt="이원빈" src="https://github.com/user-attachments/assets/bd6580ff-cf25-4be9-8840-75af286d885f">
+<img width="1000" alt="이원빈" src="https://github.com/user-attachments/assets/bd6580ff-cf25-4be9-8840-75af286d885f">
 
-• 문제\_
+## 문제\_
 server action에서 위처럼 클라이언트를 전역적으로 한번 선언하고 재사용하려고 하니 import { cookies } from "next/headers" 에서 에러가 발생했다.
 
-<img width="1492" alt="이원빈2" src="https://github.com/user-attachments/assets/07323f05-6577-413e-9047-5ce048b12058">
+<img width="1000" alt="이원빈2" src="https://github.com/user-attachments/assets/07323f05-6577-413e-9047-5ce048b12058">
 
-• 해결\_
+## 해결\_
 
 supabase를 자세히 보니 사용 시 마다 클라이언트를 만들라고 나와있었다.
+</details>
 
 <br />
 
-### 3. 저장된 유저 아이디(id)와 일치하는 nickname 가져오기
+<details>
+<summary><h2>3️⃣ 저장된 유저 아이디(id)와 일치하는 nickname 가져와 보여주기</h2></summary>
 
-• 문제\_
+## 문제\_
 user_info의 id를 외래키로 설정해 participantIds 배열을 만들고 닉네임을 매칭시키지 않은 문제
 
 ![김서연](https://github.com/user-attachments/assets/c2ea837c-5bb2-4c81-98ec-145c4e2949f3)
 
-• 해결\_
+## 해결\_
 rooms 테이블에 저장된 참가자 아이디(participants) 와 user_info 테이블에 저장된 유저 아이디(id)와 일치하는 nickname 가져오기
 
 ![김서연-2](https://github.com/user-attachments/assets/9c140038-40a3-49d1-a34d-876ea02d13da)
 
-• 결론\_
+## 결론\_
 id와 일치하는 participant
 (4d0d034b-c092-4b9e-bbdb-0d5b25e21cba) 찾아서 nickname 반환 성공!
 
-↓ 더 자세한 ⚒️ 트러블슈팅
+### ↓ 더 자세한 ⚒️ 트러블슈팅 !
+
 [![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api?name=gimmari&tag=&color=dark)]([https://velog.io/@gimmari/트러블슈팅](https://velog.io/@gimmari/데이터를-한-형식에서-다른-형식으로-변환하는-데이터-매핑-Data-Mapping))
 
+</details>
 
 <br/>
 
-### 4. 유저 정보 가져오는 커스텀 훅 (TQ사용)
+<details>
+<summary><h2>4️⃣ 유저 정보 가져오는 커스텀 훅 (TQ사용)</h2></summary>
 
 ![이준열](https://github.com/user-attachments/assets/87f45bbd-d4c2-4044-a32f-2926a3e9e206)
 
-• 문제\_
+## 문제\_
 특정 상황에서 유저 데이터가 다르게 들어옴. 어쩔땐 ID만, 어쩔땐 객체로
 
-• 해결\_
+## 해결\_
 유저 정보를 가져오는 TQ가 두 개 있었는데 같은 queryKey[“loginUser”] 를 공유했음. 따라서 다른 함수에서 다른 데이터를 요청하지만 같은 캐싱을 사용하기 때문에 발생했고, que 경하고 문제 해결
-
+</details>
 <br/>
 
-### 5. user 상태가 초기에는 null인 이슈
+<details>
+<summary> <h2>5️⃣ user 상태가 초기에는 null인 이슈</h2></summary>
 
-<img width="2276" alt="장수인" src="https://github.com/user-attachments/assets/b6253ca2-70ec-4081-a736-f2086c98f303">
+<img width="1000" alt="장수인" src="https://github.com/user-attachments/assets/b6253ca2-70ec-4081-a736-f2086c98f303">
 
-• 문제\_
+## 문제\_
 user 상태가 초기에는 null인 상태에서 fetchTodos 함수가 호출되기 때문에 사용자가 로그인하지 않았거나 API호출이 지연되면 todo 목록이 로드되지 않음
 
-• 해결\_
+## 해결\_
 fetchTodos 함수가 user 상태가 변경된 후에만 호출되도록 useEffect 의 의존성 배열에 user를 추가
-
-<br/>
+</details>
 
